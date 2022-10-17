@@ -14,13 +14,14 @@ const customErrorHandler = require("./middlewares/errors/customErrorHandler.js")
 dotenv.config();
 
 // Database Connect
-connectDatabase();
 
 // Port
 const PORT = 3000 || process.env.PORT;
 
 //The app variable uses the Express package.
 const app = express();
+
+// connectDatabase();
 
 // "localhost:PORT/" endpoint
 app.get("/", (req, res) => {
@@ -35,5 +36,6 @@ app.use("/api", routers); // Route configuration.
 
 // This function connects the server to a PORT.
 app.listen(PORT, () => {
-  console.log(`Server is running on localhost:${PORT}`);
+  connectDatabase();
+  // console.log(`Server is running on localhost:${PORT}`);
 });
