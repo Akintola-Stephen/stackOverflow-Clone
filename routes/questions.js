@@ -4,11 +4,8 @@
 const {
   askNewQuestion,
   getAllQuestions,
-  getSingleQuestion,
   editQuestion,
   deleteQuestion,
-  likeQuestion,
-  undoLikeQuestion,
 } = require("../controllers/questions.js");
 const {
   getAccessToRoute,
