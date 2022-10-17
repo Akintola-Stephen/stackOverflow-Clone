@@ -45,7 +45,34 @@ const editQuestion = asyncErrorWrapper(async (req, res, next) => {
   });
 });
 
+/* Get All Questions. This controller returns all questions. */
+const getAllQuestions = asyncErrorWrapper(async (req, res, next) => {
+  /* The "question" image finds and returns all the questions from the database. */
+  const questions = await Question.find();
+
+  /* JSON information */
+  return res.status(200).json({
+    success: true,
+    data: questions,
+  });
+});
+
+/* Delete Question */
+const deleteQuestion = asyncErrorWrapper(async (req, res, next) => {
+  const { id } = req.params;
+
+  await Question.findOneAndDelete(id);
+
+  /* JSON information */
+  res.status(200).json({
+    success: true,
+    message: "Your Question was deleted.",
+  });
+});
+
 module.exports = {
   askNewQuestion,
   editQuestion,
+  deleteQuestion,
+  getAllQuestions,
 };
