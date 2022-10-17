@@ -15,6 +15,4 @@ const connectDatabase = () => {
     });
 };
 
-// mongodb+srv://stephen:23killers@sandbox.zyw4n.mongodb.net/?retryWrites=true&w=majority
-
 module.exports = connectDatabase;
