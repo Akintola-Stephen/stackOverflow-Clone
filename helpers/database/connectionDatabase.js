@@ -1,6 +1,5 @@
 /* Database Connect */
 const mongoose = require("mongoose");
-require("dotenv");
 
 const connectDatabase = () => {
   /* Connection to the database occurs with "mongoose.connect()". Give the database connection link as a parameter. */
