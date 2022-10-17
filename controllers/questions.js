@@ -3,6 +3,8 @@
 const Question = require("../models/Question.js"); // Question model import
 const asyncErrorWrapper = require("express-async-handler"); // Express-async-handler import
 
+let isCached = false;
+
 /* Ask New Question This controller creates a new question. */
 const askNewQuestion = asyncErrorWrapper(async (req, res, next) => {
   /* Question information is taken from "req.body". */

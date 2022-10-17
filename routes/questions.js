@@ -14,7 +14,6 @@ const {
 const {
   checkQuestionExist,
 } = require("../middlewares/database/databaseHelpers.js");
-const answer = require("./answer.js");
 
 /* Express router. */
 const express = require("express");
