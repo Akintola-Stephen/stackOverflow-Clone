@@ -1,6 +1,6 @@
 /* Database Connect */
-
 const mongoose = require("mongoose");
+require("dotenv");
 
 const connectDatabase = () => {
   /* Connection to the database occurs with "mongoose.connect()". Give the database connection link as a parameter. */
@@ -14,5 +14,7 @@ const connectDatabase = () => {
       console.log(err);
     });
 };
+
+// mongodb+srv://stephen:23killers@sandbox.zyw4n.mongodb.net/?retryWrites=true&w=majority
 
 module.exports = connectDatabase;
